@@ -9,7 +9,7 @@ Claude Code used to show fun thinking labels while processing — `* Gooning... 
 Those labels are gone (or at least, "Gooning" is). This plugin brings the vibe back — two ways:
 
 - **Statusline** — message rotates at the bottom while Claude thinks
-- **Conversation** — `UserPromptSubmit says: [message]` pops on every prompt
+- **Conversation** — random message surfaces in the transcript on every prompt
 
 ---
 
