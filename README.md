@@ -1,6 +1,6 @@
 # saucy-status
 
-![saucy-status](./banner.jpeg)
+<p align="center"><img src="./banner.jpeg" width="400" /></p>
 
 > *Claude gooning on your context... it's beautiful*
 
