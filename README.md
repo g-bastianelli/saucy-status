@@ -1,38 +1,40 @@
 # saucy-status
 
-Claude Code plugin — suggestive loading messages while Claude thinks.
+> *Claude gooning on your context... it's beautiful*
 
-## Installation
+Claude Code plugin that shows suggestive loading messages while Claude thinks. Because staring at a blank spinner is boring, and watching Claude "goon on your embeddings" is not.
+
+**Why does this exist?** Claude used to show little status messages while thinking. They're gone now. This plugin brings them back — but hornier and more brainrot.
+
+---
+
+## Install
 
 ```
 /plugin marketplace add g-bastianelli/saucy-status
 /plugin install saucy-status@saucy-status
 ```
 
-Restart Claude Code. The statusline badge is auto-configured on first session start.
+Restart Claude Code. Statusline auto-configures. Done.
 
-## Usage
+## Commands
 
 | Command | Effect |
 |---------|--------|
-| `/saucy-status:toggle` | Enable/disable the plugin |
+| `/saucy-status:toggle` | Turn on/off |
 | `/saucy-status:gooning` | Switch to gooning mode (or back to saucy) |
 
 ## Modes
 
-| Mode | Description |
-|------|-------------|
-| **off** | No messages (default) |
-| **saucy** | Suggestive tech humor + double entendres |
-| **gooning** | Gooning-themed messages |
+**off** — nothing (default)
 
-State persists in `~/.claude/.saucy-status`. Messages rotate in the statusline while active.
+**saucy** — double entendres, suggestive tech metaphors. Claude is "allocating full RAM for this very special request."
 
-## How it works
+**gooning** — full brainrot. Claude is "lost in your embeddings." Duration unknown.
 
-- `SessionStart` hook → auto-configures the statusline on first run
-- `statusline.sh` → displays a random message from `data/messages.json` based on active mode
-- Skills (`toggle`, `gooning`) → switch state via slash commands
+---
+
+Messages rotate in the statusline. State persists across sessions in `~/.claude/.saucy-status`.
 
 ## Uninstall
 
