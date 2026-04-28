@@ -2,9 +2,9 @@
 
 > *Claude gooning on your context... it's beautiful*
 
-Claude Code plugin that shows suggestive loading messages while Claude thinks. Because staring at a blank spinner is boring, and watching Claude "goon on your embeddings" is not.
+Claude Code used to show fun thinking labels while processing — `* Gooning... (thought for 4s)`, `* Topsy-turvying...`, `* Brewing...`. Random, chaotic, perfect.
 
-**Why does this exist?** Claude used to show little status messages while thinking. They're gone now. This plugin brings them back — but hornier and more brainrot.
+Those labels are gone (or at least, "Gooning" is). This plugin brings the vibe back via the statusline — suggestive messages rotating at the bottom while Claude thinks.
 
 ---
 
