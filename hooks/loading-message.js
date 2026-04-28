@@ -12,4 +12,4 @@ const messages = JSON.parse(fs.readFileSync(messagesPath, 'utf8'));
 const pool = messages[mode] || messages['saucy'];
 const message = pickMessage(pool);
 
-process.stdout.write(message);
+process.stdout.write(JSON.stringify({ systemMessage: message }));
