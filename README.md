@@ -9,16 +9,7 @@ Claude Code plugin — suggestive loading messages while Claude thinks.
 /plugin install saucy-status@saucy-status
 ```
 
-On first session start, the plugin detects if the statusline badge is configured. If not, it prints the exact JSON snippet to paste into `~/.claude/settings.json`. Manual setup:
-
-```json
-{
-  "statusLine": {
-    "type": "command",
-    "command": "bash \"${CLAUDE_PLUGIN_ROOT}/hooks/statusline.sh\""
-  }
-}
-```
+Restart Claude Code. The statusline badge is auto-configured on first session start.
 
 ## Usage
 
@@ -33,15 +24,15 @@ On first session start, the plugin detects if the statusline badge is configured
 |------|-------------|
 | **off** | No messages (default) |
 | **saucy** | Suggestive tech humor + double entendres |
-| **gooning** | Gooning-themed jokes only |
+| **gooning** | Gooning-themed messages |
 
-State persists in `~/.claude/.saucy-status`.
+State persists in `~/.claude/.saucy-status`. Messages rotate in the statusline while active.
 
 ## How it works
 
-- `UserPromptSubmit` hook → injects a random loading message from `data/messages.json` based on active mode
-- `SessionStart` hook → detects missing statusline config and prints setup snippet
-- Skills (`toggle`, `gooning`) → switch state file via slash commands
+- `SessionStart` hook → auto-configures the statusline on first run
+- `statusline.sh` → displays a random message from `data/messages.json` based on active mode
+- Skills (`toggle`, `gooning`) → switch state via slash commands
 
 ## Uninstall
 
