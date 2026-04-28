@@ -25,6 +25,9 @@ if (!isStatuslineConfigured()) {
   }, null, 2);
 
   process.stdout.write(JSON.stringify({
-    hookSpecificOutput: `SAUCY-STATUS SETUP: Statusline badge not configured. Add this to ~/.claude/settings.json:\n${snippet}`
+    hookSpecificOutput: {
+      hookEventName: "SessionStart",
+      additionalContext: `SAUCY-STATUS SETUP: Statusline badge not configured. Add this to ~/.claude/settings.json:\n${snippet}`
+    }
   }));
 }
