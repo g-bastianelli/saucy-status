@@ -1,5 +1,7 @@
 # saucy-status
 
+![saucy-status](./banner.jpeg)
+
 > *Claude gooning on your context... it's beautiful*
 
 Claude Code used to show fun thinking labels while processing — `* Gooning... (thought for 4s)`, `* Topsy-turvying...`, `* Brewing...`. Random, chaotic, perfect.
