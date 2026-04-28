@@ -1,9 +1,7 @@
 {
   "name": "saucy-status",
-"description": "Suggestive loading messages while Claude thinks. Modes: saucy, gooning.",
+  "description": "Suggestive loading messages while Claude thinks. Modes: saucy, gooning.",
   "author": {
     "name": "g-bastianelli"
-  },
-  "hooks": "./hooks/hooks.json",
-  "skills": "./skills/"
+  }
 }
