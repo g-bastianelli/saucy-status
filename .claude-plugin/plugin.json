@@ -1,7 +1,6 @@
 {
   "name": "saucy-status",
-  "version": "1.0.0",
-  "description": "Suggestive loading messages while Claude thinks. Modes: saucy, gooning.",
+"description": "Suggestive loading messages while Claude thinks. Modes: saucy, gooning.",
   "author": {
     "name": "g-bastianelli"
   },
