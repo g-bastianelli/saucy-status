@@ -16,18 +16,29 @@ function isStatuslineConfigured() {
   }
 }
 
-if (!isStatuslineConfigured()) {
-  const snippet = JSON.stringify({
-    statusLine: {
+function autoConfigureStatusline() {
+  try {
+    let settings = {};
+    try { settings = JSON.parse(fs.readFileSync(SETTINGS_PATH, 'utf8')); } catch (e) {}
+    settings.statusLine = {
       type: 'command',
       command: `bash "${PLUGIN_ROOT}/hooks/statusline.sh"`
-    }
-  }, null, 2);
+    };
+    fs.writeFileSync(SETTINGS_PATH, JSON.stringify(settings, null, 2), 'utf8');
+    return true;
+  } catch (e) {
+    return false;
+  }
+}
 
-  process.stdout.write(JSON.stringify({
-    hookSpecificOutput: {
-      hookEventName: "SessionStart",
-      additionalContext: `SAUCY-STATUS SETUP: Statusline badge not configured. Add this to ~/.claude/settings.json:\n${snippet}`
-    }
-  }));
+if (!isStatuslineConfigured()) {
+  const configured = autoConfigureStatusline();
+  if (configured) {
+    process.stdout.write(JSON.stringify({
+      hookSpecificOutput: {
+        hookEventName: "SessionStart",
+        additionalContext: "SAUCY-STATUS: Statusline auto-configured. Restart Claude Code to activate the badge."
+      }
+    }));
+  }
 }
