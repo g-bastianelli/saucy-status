@@ -1,8 +1,9 @@
 const fs = require('fs');
+const os = require('os');
 const path = require('path');
 
 const VALID_MODES = ['off', 'saucy', 'gooning'];
-const FLAG_PATH = path.join(process.env.HOME, '.claude', '.saucy-status');
+const FLAG_PATH = path.join(os.homedir(), '.claude', '.saucy-status');
 const MAX_FLAG_SIZE = 10;
 
 function readFlagFile(flagPath) {
