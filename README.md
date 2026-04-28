@@ -6,7 +6,10 @@
 
 Claude Code used to show fun thinking labels while processing — `* Gooning... (thought for 4s)`, `* Topsy-turvying...`, `* Brewing...`. Random, chaotic, perfect.
 
-Those labels are gone (or at least, "Gooning" is). This plugin brings the vibe back via the statusline — suggestive messages rotating at the bottom while Claude thinks.
+Those labels are gone (or at least, "Gooning" is). This plugin brings the vibe back — two ways:
+
+- **Statusline** — message rotates at the bottom while Claude thinks
+- **Conversation** — `UserPromptSubmit says: [message]` pops on every prompt
 
 ---
 
@@ -28,7 +31,7 @@ Restart Claude Code. Statusline auto-configures. Done.
 
 ## Modes
 
-**off** — nothing (default)
+**off** — silent (default)
 
 **saucy** — double entendres, suggestive tech metaphors. Claude is "allocating full RAM for this very special request."
 
@@ -36,7 +39,7 @@ Restart Claude Code. Statusline auto-configures. Done.
 
 ---
 
-Messages rotate in the statusline. State persists across sessions in `~/.claude/.saucy-status`.
+State persists across sessions in `~/.claude/.saucy-status`.
 
 ## Uninstall
 
