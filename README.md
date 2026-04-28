@@ -4,25 +4,21 @@ Claude Code plugin — suggestive loading messages while Claude thinks.
 
 ## Installation
 
-```bash
-claude plugin install https://github.com/g-bastianelli/saucy-status
+```
+/plugin marketplace add g-bastianelli/saucy-status
+/plugin install saucy-status@saucy-status
 ```
 
-Or locally:
-```bash
-claude --plugin-dir ./saucy-status
-```
+On first session start, the plugin detects if the statusline badge is configured. If not, it prints the exact JSON snippet to paste into `~/.claude/settings.json`. Manual setup:
 
-Enable the statusline badge in `~/.claude/settings.json`:
 ```json
 {
   "statusLine": {
     "type": "command",
-    "command": "bash \"PATH_TO_PLUGIN/hooks/statusline.sh\""
+    "command": "bash \"${CLAUDE_PLUGIN_ROOT}/hooks/statusline.sh\""
   }
 }
 ```
-Replace `PATH_TO_PLUGIN` with the actual installation path (e.g. `~/.claude/plugins/cache/saucy-status/hooks/statusline.sh`).
 
 ## Usage
 
@@ -39,9 +35,17 @@ Replace `PATH_TO_PLUGIN` with the actual installation path (e.g. `~/.claude/plug
 | **saucy** | Suggestive tech humor + double entendres |
 | **gooning** | Gooning-themed jokes only |
 
+State persists in `~/.claude/.saucy-status`.
+
+## How it works
+
+- `UserPromptSubmit` hook → injects a random loading message from `data/messages.json` based on active mode
+- `SessionStart` hook → detects missing statusline config and prints setup snippet
+- Skills (`toggle`, `gooning`) → switch state file via slash commands
+
 ## Uninstall
 
-```bash
-claude plugin uninstall saucy-status
+```
+/plugin uninstall saucy-status@saucy-status
 rm ~/.claude/.saucy-status
 ```
