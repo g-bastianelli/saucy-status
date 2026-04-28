@@ -1,6 +1,6 @@
 ---
-name: gooning
-description: Switch to gooning mode or back to saucy. Use when user types /saucy-status:gooning
+name: saucy-gooning
+description: Switch to gooning mode or back to saucy. Use when user types /saucy-gooning
 ---
 
 Switch saucy-status gooning mode. Read the flag file at `~/.claude/.saucy-status`:

@@ -1,6 +1,6 @@
 ---
-name: toggle
-description: Toggle saucy-status on/off. Use when user types /saucy-status:toggle
+name: saucy-toggle
+description: Toggle saucy-status on/off. Use when user types /saucy-toggle
 ---
 
 Toggle the saucy-status plugin. Read the flag file at `~/.claude/.saucy-status`:

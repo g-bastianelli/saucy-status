@@ -26,8 +26,8 @@ Restart Claude Code. Statusline auto-configures. Done.
 
 | Command | Effect |
 |---------|--------|
-| `/saucy-status:toggle` | Turn on/off |
-| `/saucy-status:gooning` | Switch to gooning mode (or back to saucy) |
+| `/saucy-toggle` | Turn on/off |
+| `/saucy-gooning` | Switch to gooning mode (or back to saucy) |
 
 ## Modes
 
