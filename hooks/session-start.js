@@ -3,7 +3,7 @@ const fs = require('fs');
 const os = require('os');
 const path = require('path');
 
-const PLUGIN_ROOT = process.env.CLAUDE_PLUGIN_ROOT || __dirname.replace('/hooks', '');
+const PLUGIN_ROOT = process.env.CLAUDE_PLUGIN_ROOT;
 const SETTINGS_PATH = path.join(os.homedir(), '.claude', 'settings.json');
 
 function isStatuslineConfigured() {
